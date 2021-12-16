@@ -6,7 +6,9 @@
       xmlns:local="clr-namespace:_01.BikeShop"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Contact">
+      Title="Contact"
+      Background="{StaticResource background}"
+      >
 
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="49,53,0,0" Text="Sender" TextWrapping="Wrap" VerticalAlignment="Top"/>

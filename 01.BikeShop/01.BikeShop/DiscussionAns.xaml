@@ -6,7 +6,9 @@
       xmlns:data="clr-namespace:_01.BikeShop"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="DiscussionAns">
+      Title="DiscussionAns"
+      Background="{StaticResource background}"
+      >
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -34,6 +36,17 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <TextBox Grid.Column="0" Grid.Row="1" Margin="5" />
-        <Button Grid.Column="1" Grid.Row="1" Margin="5" Content="Send" />
+        <Button Grid.Column="1" Grid.Row="1" Margin="5" Content="Send">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse Fill="#AA000000" Margin="10,10,0,0"/>
+                        <Ellipse Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Fill="{TemplateBinding Background}" Margin="0,0,10,10"/>
+                        <Label Content="{TemplateBinding Content}" Margin="0,0,15,15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+            
+        </Button>
     </Grid>
 </Page>

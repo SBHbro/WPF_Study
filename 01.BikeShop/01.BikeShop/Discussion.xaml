@@ -6,12 +6,23 @@
       xmlns:local="clr-namespace:_01.BikeShop"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Discussion">
+      Title="Discussion"
+      Background="{StaticResource background}"
+      >
 
     <Grid>
         <ListBox Margin="16,10,16,102"/>
         <TextBox Margin="16,0,146,29" Text="Type your message here" TextWrapping="Wrap" Height="47" VerticalAlignment="Bottom"/>
-        <Button Content="Send" Margin="0,0,16,29" Height="47" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="109"/>
+        <Button Content="Send" Margin="0,0,16,29" Height="47" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="109">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Fill="{TemplateBinding Background}"/>
+                        <Label Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
 
     </Grid>
 </Page>
