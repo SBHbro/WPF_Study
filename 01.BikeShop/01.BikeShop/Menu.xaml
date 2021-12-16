@@ -9,10 +9,18 @@
       Title="Menu">
 
     <Grid>
-        <Button Content="Product" Margin="108,174,0,0" HorizontalAlignment="Left" Width="184" Height="94" VerticalAlignment="Top"/>
+        <Button Content="Product" Margin="108,174,0,0" HorizontalAlignment="Left" Width="184" Height="94" VerticalAlignment="Top" Click="Button_Click_2"/>
         <Button Content="Live Support" Margin="349,174,0,0" HorizontalAlignment="Left" Width="171" Height="94" VerticalAlignment="Top" Click="Button_Click_1"/>
         <Button Content="Email Support" Margin="603,174,0,0" Click="Button_Click" HorizontalAlignment="Left" Width="166" Height="94" VerticalAlignment="Top"/>
         <TextBlock Margin="294,312,294,73" Text="Adventure Works" TextWrapping="Wrap" FontSize="24" FontStyle="Italic"/>
 
+        <Button>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Ellipse Fill="GreenYellow" Width="100" Height="100"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        
     </Grid>
 </Page>
