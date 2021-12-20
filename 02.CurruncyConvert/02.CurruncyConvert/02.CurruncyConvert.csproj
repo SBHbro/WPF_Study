@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>_02.CurruncyConvert</RootNamespace>
+    <RootNamespace>_02.CurrencyConvert</RootNamespace>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 

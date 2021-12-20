@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace _02.CurruncyConvert
+namespace _02.CurrencyConvert
 {
-    class CurruncyConvertViewModel : Notifier
+    class CurrencyConvertViewModel : Notifier
     {
         private decimal won;
         public decimal Won

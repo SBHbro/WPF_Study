@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace _02.CurruncyConvert
+namespace _02.CurrencyConvert
 {
-    class Curruncy
+    class Currency
     {
-        public Curruncy(string title, decimal rate)
+        public Currency(string title, decimal rate)
         {
             Title = title;
             Rate = rate;
@@ -16,7 +16,7 @@ namespace _02.CurruncyConvert
         public decimal Rate { get; set; }
     }
 
-    class CurruncyConvertViewModel2:Notifier
+    class CurrencyConvertViewModel2:Notifier
     {
         #region property
         private decimal won;
@@ -42,20 +42,20 @@ namespace _02.CurruncyConvert
             }
         }
 
-        private Curruncy selectedCurruncy;
-        public Curruncy SelectedCurruncy
+        private Currency selectedCurrency;
+        public Currency SelectedCurrency
         {
-            get { return selectedCurruncy; }
+            get { return selectedCurrency; }
             set
             {
-                selectedCurruncy = value;
-                OnPropertyChanged("SelectedCurruncy");
-                OnSelectedCurruncyChaged();
+                selectedCurrency = value;
+                OnPropertyChanged("SelectedCurrency");
+                OnSelectedCurrencyChaged();
             }
         }
 
-        private IEnumerable<Curruncy> curruncies;
-        public IEnumerable<Curruncy> Curruncies
+        private IEnumerable<Currency> curruncies;
+        public IEnumerable<Currency> Curruncies
         {
             get { return curruncies; }
             set
@@ -77,35 +77,35 @@ namespace _02.CurruncyConvert
         }
         #endregion
 
-        public CurruncyConvertViewModel2()
+        public CurrencyConvertViewModel2()
         {
-            Curruncies = new Curruncy[]
+            Curruncies = new Currency[]
             {
-                new Curruncy("US",0.0008m),
-                new Curruncy("CHINA",0.005m)
+                new Currency("US",0.0008m),
+                new Currency("CHINA",0.005m)
             };
         }
 
         private void OnWonChanged()
         {
-            ComputedCurruncy();
+            ComputedCurrency();
         }
 
-        private void OnSelectedCurruncyChaged()
+        private void OnSelectedCurrencyChaged()
         {
-            ComputedCurruncy();
+            ComputedCurrency();
         }
 
-        private void ComputedCurruncy()
+        private void ComputedCurrency()
         {
-            if(SelectedCurruncy == null)
+            if(SelectedCurrency == null)
             {
                 return;
             }
 
-            Converted = Won * SelectedCurruncy.Rate;
+            Converted = Won * SelectedCurrency.Rate;
 
-            ResultText = string.Format("Amount in {0}", SelectedCurruncy.Title);
+            ResultText = string.Format("Amount in {0}", SelectedCurrency.Title);
         }
     }
 }
